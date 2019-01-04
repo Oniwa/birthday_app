@@ -33,3 +33,14 @@ if todays_date.month == birth_date.month:
         print(
             f'Looks like your birthday is in {days_until_birthday.days} days.')
         print('Hope you\'re looking forward to it!')
+elif todays_date.month < birth_date.month:
+    days_until_birthday = birth_date.replace(
+        year=todays_date.year) - todays_date
+    print(f'Looks like your birthday is in {days_until_birthday.days} days.')
+    print('Hope you\'re looking forward to it!')
+else:
+    days_until_birthday = birth_date.replace(
+        year=(todays_date.year + 1)) - todays_date
+    print(
+        f'Looks like your birthday is in {days_until_birthday.days} days.')
+    print('Hope you\'re looking forward to it!')
