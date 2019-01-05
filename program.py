@@ -13,7 +13,7 @@ def get_birthday_from_user():
 
     date_of_birth = date_of_birth.split('/')
 
-    birth_date = datetime.datetime(year=int(date_of_birth[2]),
+    birth_date = datetime.date(year=int(date_of_birth[2]),
                                    month=int(date_of_birth[0]),
                                    day=int(date_of_birth[1]))
 
@@ -23,7 +23,7 @@ def get_birthday_from_user():
 
 
 def compute_days_until_birthday(birth_date):
-    todays_date = datetime.datetime.now()
+    todays_date = datetime.date.today()
 
     years_alive = todays_date.year - birth_date.year
 
@@ -47,7 +47,6 @@ def compute_days_until_birthday(birth_date):
 
 
 def print_birthday_info(days_until_birthday, years_alive):
-    # TODO: If today or tomorrow is the birthday they both hit the else clause
     if days_until_birthday.days > 0:
         print(f'Looks like your birthday is in {days_until_birthday.days} days.'
               f'\nHope you\'re looking forward to it!')
